@@ -26,7 +26,8 @@ export class BetterDoctorApi {
         format: "json"
       },
       success(response) {
-        console.log(response);
+        // TODO: do something about this:
+        // For some results, there are multiple identical practices listed, but for others the listed practices are different places
         let practices = [];
         response.data.forEach(function(searchResult) {
           let doctorName = new Name(searchResult.profile.first_name, searchResult.profile.last_name, searchResult.profile.title);
