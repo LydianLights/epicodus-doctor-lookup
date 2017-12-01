@@ -15,14 +15,22 @@
       </div>
       <form id="search-form">
         <div class="input-group">
-          <input class="form-control" type="text" placeholder="Search Portland Doctors...">
+          <input id="search-form-query" class="form-control" type="text" placeholder="Search Portland Doctors...">
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit">Go!</button>
           </div>
         </div>
       </form>
-      <div id="results">
-
+      <div id="searching-message" class="initially-hidden">
+        <p>Searching...</p>
+      </div>
+      <div id="search-results" class="initially-hidden">
+        <div id="no-results-found" class="initially-hidden">
+          <h2>No results found...</h2>
+        </div>
+        <div id="search-results-list" class="initially-hidden">
+          
+        </div>
       </div>
     </div>
   </body>
