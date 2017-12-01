@@ -37,7 +37,7 @@ export class BetterDoctorApi {
             let name = location.name;
             let address = new Address(location.visit_address.street, location.visit_address.city, location.visit_address.state, location.visit_address.zip);
             let phone = new PhoneNumber(location.phones[0].number);
-            let website = null;
+            let website = null; // TODO: Didn't see website listed anywhere
             let acceptingPatients = location.accepts_new_patients;
 
             let practice = new Practice(name, address, phone, website, acceptingPatients, doctor);
