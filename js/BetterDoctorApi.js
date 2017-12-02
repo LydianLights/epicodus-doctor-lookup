@@ -41,7 +41,10 @@ export class BetterDoctorApi {
             let acceptingPatients = location.accepts_new_patients;
 
             let practice = new Practice(name, address, phone, website, acceptingPatients, doctor);
-            practices.push(practice)
+            // Check if equivalent to last result to avoid duplicates from the api
+            if (!(practices.length > 0 && (JSON.stringify(practice) === JSON.stringify(practices[practices.length - 1])))) {
+              practices.push(practice);
+            }
           });
         });
         onSuccess(practices);
