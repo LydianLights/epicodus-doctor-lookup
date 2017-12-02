@@ -32,8 +32,8 @@ describe("Name .fullWithTitle", function() {
     let testName = new Name("Rane", "Fields", "Fake M.D.");
     expect(testName.fullWithTitle).toEqual("Rane Fields, Fake M.D.");
   });
-  it("should return null if name has no title", function() {
+  it("should return only first and last if name has no title", function() {
     let testName = new Name("Rane", "Fields");
-    expect(testName.fullWithTitle).toEqual(null);
+    expect(testName.fullWithTitle).toEqual("Rane Fields");
   });
 });
