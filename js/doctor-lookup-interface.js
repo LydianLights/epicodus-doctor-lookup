@@ -9,6 +9,7 @@ class SearchForm {
   static submit() {
     $("#search-form button[type=submit]").attr("disabled", "disabled");
     $("#search-results").hide();
+    $("#searching-error").hide();
     $("#searching-message").show();
     $("#search-results-list").empty();
     const searchQuery = $("#search-form-query").val();
@@ -59,9 +60,9 @@ class SearchForm {
     return html;
   }
   static searchError() {
-    console.log("Search Error");
     $("#searching-message").hide();
-    $("#results").show();
+    $("#searching-error").show();
+    $("#search-form button[type=submit]").removeAttr("disabled");
   }
 }
 
